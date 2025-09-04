@@ -1,0 +1,17 @@
+.whitelabel-wp-logo-upload-container {
+    margin-bottom: 15px;
+}
+
+.whitelabel-wp-logo-upload-button {
+    margin-left: 10px;
+}
+
+.whitelabel-wp-logo-preview {
+    margin-top: 10px;
+}
+
+.whitelabel-wp-logo-preview img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+}
