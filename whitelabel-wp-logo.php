@@ -42,6 +42,7 @@ function whitelabel_wp_logo_activate() {
         'login_logo' => '',
         'admin_logo' => '',
         'replace_menu_icons' => false,
+        'remove_wp_menu' => true, // Nueva opción por defecto
         'custom_menu_icons' => array()
     );
     

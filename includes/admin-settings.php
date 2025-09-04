@@ -56,6 +56,23 @@ class Whitelabel_WP_Logo_Admin_Settings {
             'whitelabel_wp_logo_logos_section'
         );
         
+        // Sección comportamiento
+        add_settings_section(
+            'whitelabel_wp_logo_behavior_section',
+            __('Comportamiento del Logo', 'whitelabel-wp-logo'),
+            array(__CLASS__, 'behavior_section_callback'),
+            'whitelabel-wp-logo-settings'
+        );
+        
+        // Campo remover menú WordPress
+        add_settings_field(
+            'remove_wp_menu',
+            __('Comportamiento del Logo Admin', 'whitelabel-wp-logo'),
+            array(__CLASS__, 'remove_wp_menu_callback'),
+            'whitelabel-wp-logo-settings',
+            'whitelabel_wp_logo_behavior_section'
+        );
+        
         // Sección iconos del menú
         add_settings_section(
             'whitelabel_wp_logo_icons_section',
@@ -76,6 +93,10 @@ class Whitelabel_WP_Logo_Admin_Settings {
     
     public static function logos_section_callback() {
         echo '<p>' . __('Personaliza los logos de WordPress', 'whitelabel-wp-logo') . '</p>';
+    }
+    
+    public static function behavior_section_callback() {
+        echo '<p>' . __('Configura el comportamiento del logo en la barra de administración', 'whitelabel-wp-logo') . '</p>';
     }
     
     public static function icons_section_callback() {
@@ -115,6 +136,20 @@ class Whitelabel_WP_Logo_Admin_Settings {
                 </div>
             <?php endif; ?>
         </div>
+        <?php
+    }
+    
+    public static function remove_wp_menu_callback() {
+        $options = get_option('whitelabel_wp_logo_settings');
+        $remove_wp_menu = isset($options['remove_wp_menu']) ? $options['remove_wp_menu'] : true;
+        ?>
+        <label>
+            <input type="checkbox" name="whitelabel_wp_logo_settings[remove_wp_menu]" value="1" <?php checked($remove_wp_menu, 1); ?> />
+            <?php _e('Remover menú desplegable del logo y redirigir al escritorio', 'whitelabel-wp-logo'); ?>
+        </label>
+        <p class="description">
+            <?php _e('Cuando está activado, hacer clic en el logo te llevará directamente al escritorio en lugar de mostrar el menú de WordPress.', 'whitelabel-wp-logo'); ?>
+        </p>
         <?php
     }
     
