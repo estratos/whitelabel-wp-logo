@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Whitelabel WP Logo
- * Plugin URI: https://tusitio.com
+ * Plugin URI: https://estratos.net/wp-plugin/whitelabel-wp-logo
  * Description: Convierte tu instalación de WordPress en whitelabel cambiando logos e iconos
  * Version: 1.0.0
- * Author: Tu Nombre
+ * Author: Estratos
  * License: GPL v2 or later
  * Text Domain: whitelabel-wp-logo
  */
